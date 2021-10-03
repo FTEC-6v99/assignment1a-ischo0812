@@ -1,4 +1,4 @@
-from app.src.StatSheet import StatSheet
+from app.src.stat import StatSheet
 
 
 def is_sport_unique(statsheets: list[StatSheet]) -> bool:
