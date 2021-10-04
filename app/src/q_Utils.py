@@ -11,7 +11,7 @@
 import typing as t
 
 
-def cal_average(numbers: list[t.Union[int, float]]) -> float:
+def calculate_avg(numbers: list[t.Union[int, float]]) -> float:
 
     sum: float = 0.0
     if len(numbers) == 0:
@@ -23,7 +23,7 @@ def cal_average(numbers: list[t.Union[int, float]]) -> float:
 
 
 numbers = [7.35, 9.9909, 105.33987]
-print(round(cal_average(numbers), 2))
+print(round(calculate_avg(numbers), 2))
 
 numbers = []
-print(round(cal_average(numbers), 2))
+print(round(calculate_avg(numbers), 2))
