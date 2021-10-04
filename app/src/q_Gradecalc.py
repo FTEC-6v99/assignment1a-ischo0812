@@ -10,24 +10,24 @@
 # If the list of students is empty, return an empty dictionary
 # Make sure that you add type hints to the function paramter and return value
 
-from app.src.q_Student import Student
+from app.src.q_Student import Student as StatSheet
 from app.src.q_Utils import calculate_avg
 
 
 def calculate_avg_grade(statsheets: list[StatSheet]) -> dict[int, float]:
-    player_to_stats: dict[int, list[StatSheet]] = {}
+    student_to_stats: dict[int, list[StatSheet]] = {}
     if len(StatSheet) == 0:
         raise Exception('Dictionary is empty')
     else:
         for statsheet in statsheets:
-            player_id: int = statsheet.player.number
-            if player_id in player_to_stats.keys():
-                player_to_stats.get(player_id).append(statsheet)
+            student_id: int = statsheet.student.id
+            if student_id in student_to_stats.keys():
+                student_to_stats.get(pstudent_id).append(statsheet)
             else:
-                player_to_stats[player_id] = [statsheet]
-                player_to_avgpts: dict[int, float] = {}
-        for player_id, stats in player_to_stats.items():
+                student_to_stats[student_id] = [statsheet]
+                student_to_avgpts: dict[int, float] = {}
+        for student_id, stats in student_to_stats.items():
             points = [x.stats.points for x in stats]
             avg_pts = calculate_avg(points)
-            player_to_avgpts[player_id] = avg_pts
-        return player_to_avgpts
+            student_to_avgpts[player_id] = avg_pts
+    return student_to_avgpts

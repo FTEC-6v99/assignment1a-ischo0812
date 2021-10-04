@@ -1,1 +1,0 @@
-"python.analysis.extraPaths": ["./path-to-code/"]
