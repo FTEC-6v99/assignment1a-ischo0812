@@ -9,25 +9,28 @@
 #
 # If the list of students is empty, return an empty dictionary
 # Make sure that you add type hints to the function paramter and return value
-
-from app.src.q_Student import Student as StatSheet
+from app.src.q_Student import Student
 from app.src.q_Utils import calculate_avg
 
 
-def calculate_avg_grade(statsheets: list[StatSheet]) -> dict[int, float]:
-    student_to_stats: dict[int, list[StatSheet]] = {}
-    if len(StatSheet) == 0:
-        raise Exception('Dictionary is empty')
+def calculate_avg_grade(students: list[Student]) -> dict[int, float]:
+    # check if the list of students is empty, return an empty dictionary
+    if len(students) == 0:
+        return {}
     else:
-        for statsheet in statsheets:
-            student_id: int = statsheet.student.id
+        students: dict[int, list[Student]] = {}
+# group the list by student_id
+        student_to_stats: dict[int, list[Student]] = {}
+        for student in students:
+            student_id: int = student.id
             if student_id in student_to_stats.keys():
-                student_to_stats.get(pstudent_id).append(statsheet)
+                student_to_stats.get(student_id).append(student)
             else:
-                student_to_stats[student_id] = [statsheet]
-                student_to_avgpts: dict[int, float] = {}
-        for student_id, stats in student_to_stats.items():
-            points = [x.stats.points for x in stats]
-            avg_pts = calculate_avg(points)
-            student_to_avgpts[player_id] = avg_pts
-    return student_to_avgpts
+                student_to_stats[student_id] = [student]
+        student_to_avggrd: dict[int, float] = {}
+# calculate average grade by student_id
+        for student_id, grade in student_to_stats.items():
+            grade = [x.student.grade for x in student]
+            avg_grade = calculate_avg(grade)
+            student_to_avggrd[student_id] = avg_grade
+    return student_to_avggrd
