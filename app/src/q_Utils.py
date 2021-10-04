@@ -17,13 +17,13 @@ def calculate_avg(numbers: list[t.Union[int, float]]) -> float:
     if len(numbers) == 0:
         raise Exception('expected a non-empty list')
     else:
-        for number in numbers:
-            sum += number
+        for grade in numbers:
+            sum += grade
     return sum / len(numbers)
 
 
-numbers = [7.35, 9.9909, 105.33987]
-print(round(calculate_avg(numbers), 2))
+# numbers = [7.35, 9.9909, 105.33987]
+# print(round(calculate_avg(numbers), 2))
 
-numbers = []
-print(round(calculate_avg(numbers), 2))
+# numbers = []
+# print(round(calculate_avg(numbers), 2))
