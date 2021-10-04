@@ -18,8 +18,6 @@ class Student(Person):
 
 
 p1 = Person(name='Abraham', age=31)
-p2 = Person(name='William', age=35)
-p3 = Person('Johnson', 25)
 
 p4 = Student(name='Tommy', age=31, id=202019, grade=97)
 p5 = Student(name='Michael', age=35, id=202025, grade=93)

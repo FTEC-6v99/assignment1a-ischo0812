@@ -22,5 +22,8 @@ def cal_average(numbers: list[t.Union[int, float]]) -> float:
     return sum / len(numbers)
 
 
-numbers = [5.6, 7.7]
-print(cal_average(numbers))
+numbers = [7.35, 9.9909, 105.33987]
+print(round(cal_average(numbers), 2))
+
+numbers = []
+print(round(cal_average(numbers), 2))
